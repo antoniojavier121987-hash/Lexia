@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: lexia-api
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: DATABASE_URL
+        sync: false   # lo pegas tú mismo en el panel de Render (viene de Supabase)
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: SUPABASE_BUCKET
+        value: contracts
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: ANTHROPIC_MODEL
+        value: claude-sonnet-4-6
+      - key: JWT_SECRET
+        generateValue: true   # Render genera un valor seguro automáticamente
+      - key: JWT_EXPIRE_MINUTES
+        value: "1440"
+      - key: MAX_UPLOAD_SIZE_MB
+        value: "20"
+    healthCheckPath: /

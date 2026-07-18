@@ -1,0 +1,39 @@
+name: lexia
+description: LEXIA - Asistente inteligente para comprender contratos
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+  # Peticiones HTTP a la API de LEXIA (en Render)
+  http: ^1.2.1
+
+  # Guardar el token de sesión de forma segura en el dispositivo
+  flutter_secure_storage: ^9.2.2
+
+  # Escanear/seleccionar documentos
+  image_picker: ^1.1.2
+  file_picker: ^8.0.3
+
+  # Estado de la app
+  provider: ^6.1.2
+
+  # Formateo de fechas
+  intl: ^0.19.0
+
+  # Vista previa y compartir del reporte en PDF
+  printing: ^5.13.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
